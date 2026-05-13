@@ -30,9 +30,7 @@ exclude = [
 [env]
 required = ["GEMINI_API_KEY"]
 optional = []
-template = """
-GEMINI_API_KEY=
-"""
+template = "GEMINI_API_KEY=\n"
 target = ".env"
 
 [tools]
