@@ -119,6 +119,12 @@ export async function generateBriefing(): Promise<{
          WHERE importance_score IS NOT NULL
            AND importance_score >= 4
            AND published_at > ?
+           AND COALESCE(briefing_included, 0) = 0
+           AND COALESCE(dedup_cluster_id, id) NOT IN (
+             SELECT DISTINCT COALESCE(dedup_cluster_id, id)
+             FROM news_items
+             WHERE briefing_included = 1
+           )
        )
        SELECT id, title, content, source, source_url, category,
               importance_score, importance_reason, companies_mentioned, published_at

@@ -55,6 +55,13 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
 
+function normalizeDate(s: string | null | undefined): string | null {
+  if (!s) return null;
+  const d = new Date(s);
+  if (isNaN(d.getTime())) return null;
+  return d.toISOString();
+}
+
 export async function fetchRss(
   url: string,
   options?: { filter?: string }
@@ -102,7 +109,8 @@ export async function fetchRss(
         content,
         authors: author ? [author] : [],
         publishedAt:
-          item.pubDate ?? item.published ?? new Date().toISOString(),
+          normalizeDate(item.pubDate ?? item.published) ??
+          new Date().toISOString(),
       };
     });
   }
@@ -135,7 +143,8 @@ export async function fetchRss(
         content,
         authors,
         publishedAt:
-          entry.published ?? entry.updated ?? new Date().toISOString(),
+          normalizeDate(entry.published ?? entry.updated) ??
+          new Date().toISOString(),
       };
     });
   }

@@ -1,6 +1,6 @@
 {
   "name": "quantum-signals",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Twice-weekly Quantum Signals briefing generator (Many Worlds Capital)",
   "type": "module",
   "private": true,

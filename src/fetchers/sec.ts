@@ -42,7 +42,12 @@ export async function fetchSecFilings(
       : typeof entry.link === "object" && entry.link !== null
         ? String((entry.link as Record<string, unknown>)["@_href"] ?? "")
         : "";
-    const updated = String(entry.updated ?? new Date().toISOString());
+    const rawUpdated = entry.updated != null ? String(entry.updated) : null;
+    const parsedDate = rawUpdated ? new Date(rawUpdated) : null;
+    const updated =
+      parsedDate && !isNaN(parsedDate.getTime())
+        ? parsedDate.toISOString()
+        : new Date().toISOString();
 
     const hash = createHash("sha256")
       .update(`${link}|${title}`)

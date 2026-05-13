@@ -1,7 +1,7 @@
 [rig]
 name = "quantum-signals"
 author = "hugoreno"
-version = "0.1.0"
+version = "0.2.0"
 description = "Many Worlds Capital — twice-weekly Quantum Signals briefing generator. Ingests RSS / Google News / SEC EDGAR, scores with Gemini 2.5 Flash, dedups by embeddings, writes a markdown briefing."
 runtime = "claude-code"
 
