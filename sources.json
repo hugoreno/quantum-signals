@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Google News: Quantum Computing",
+    "source_type": "google-news",
+    "config": { "query": "quantum computing" }
+  },
+  {
+    "name": "Google News: Quantum Fundraising",
+    "source_type": "google-news",
+    "config": {
+      "query": "\"quantum computing\" AND (\"funding\" OR \"raised\" OR \"series\" OR \"investment\")"
+    }
+  },
+  {
+    "name": "Google News: Quantum SPAC IPO",
+    "source_type": "google-news",
+    "config": {
+      "query": "\"quantum computing\" AND (\"SPAC\" OR \"IPO\" OR \"public\" OR \"stock\")"
+    }
+  },
+  {
+    "name": "The Quantum Insider",
+    "source_type": "rss",
+    "config": { "url": "https://thequantuminsider.com/feed/" }
+  },
+  {
+    "name": "Quantum Computing Report",
+    "source_type": "rss",
+    "config": { "url": "https://quantumcomputingreport.com/feed/" }
+  },
+  {
+    "name": "IBM Quantum Blog",
+    "source_type": "rss",
+    "config": { "url": "https://www.ibm.com/quantum/blog/rss" }
+  },
+  {
+    "name": "Google AI Blog",
+    "source_type": "rss",
+    "config": {
+      "url": "https://blog.google/technology/ai/rss/",
+      "filter": "quantum"
+    }
+  },
+  {
+    "name": "IonQ Blog",
+    "source_type": "rss",
+    "config": { "url": "https://ionq.com/news/rss.xml" }
+  },
+  {
+    "name": "D-Wave Blog",
+    "source_type": "rss",
+    "config": { "url": "https://www.dwavequantum.com/media/news/rss/" }
+  },
+  {
+    "name": "SEC EDGAR: IonQ",
+    "source_type": "sec",
+    "config": { "ticker": "IONQ", "cik": "0001812364" }
+  },
+  {
+    "name": "SEC EDGAR: Rigetti",
+    "source_type": "sec",
+    "config": { "ticker": "RGTI", "cik": "0001838359" }
+  },
+  {
+    "name": "SEC EDGAR: D-Wave",
+    "source_type": "sec",
+    "config": { "ticker": "QBTS", "cik": "0001907982" }
+  },
+  {
+    "name": "SEC EDGAR: Quantum Computing Inc",
+    "source_type": "sec",
+    "config": { "ticker": "QUBT", "cik": "0001758009" }
+  }
+]

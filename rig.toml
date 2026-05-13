@@ -1,0 +1,59 @@
+[rig]
+name = "quantum-signals"
+author = "hugoreno"
+version = "0.1.0"
+description = "Many Worlds Capital — twice-weekly Quantum Signals briefing generator. Ingests RSS / Google News / SEC EDGAR, scores with Gemini 2.5 Flash, dedups by embeddings, writes a markdown briefing."
+runtime = "claude-code"
+
+[package]
+include = [
+  "README.md",
+  "AGENTS.md",
+  "rig.toml",
+  "package.json",
+  "tsconfig.json",
+  "sources.json",
+  "src/**",
+]
+exclude = [
+  ".env",
+  ".env.*",
+  "*.key",
+  "*.pem",
+  "node_modules/**",
+  "data/**",
+  ".DS_Store",
+  ".git/**",
+  "dist/**",
+]
+
+[env]
+required = ["GEMINI_API_KEY"]
+optional = []
+template = """
+GEMINI_API_KEY=
+"""
+target = ".env"
+
+[tools]
+required = ["node", "npm"]
+
+[mcp]
+config = ""
+servers = []
+
+[plugins]
+required = []
+
+[local]
+dirs = ["data"]
+
+[install]
+commands = [
+  "npm install",
+  "npm run init-db",
+]
+
+[run]
+entrypoint = "npm"
+instructions = "cd {install_dir} && npm run all"

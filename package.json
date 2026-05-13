@@ -1,0 +1,27 @@
+{
+  "name": "quantum-signals",
+  "version": "0.1.0",
+  "description": "Twice-weekly Quantum Signals briefing generator (Many Worlds Capital)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "init-db": "tsx src/cli/init-db.ts",
+    "ingest": "tsx src/cli/ingest.ts",
+    "score": "tsx src/cli/score.ts",
+    "dedup": "tsx src/cli/dedup.ts",
+    "briefing": "tsx src/cli/briefing.ts",
+    "all": "tsx src/cli/all.ts"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "@google/genai": "^1.48.0",
+    "fast-xml-parser": "^5.5.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
